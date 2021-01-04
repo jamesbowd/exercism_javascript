@@ -11,79 +11,21 @@
 // brown-green-violet should return 15 too, ignoring the third color.
 
 export const decodedValue = (arr) => {
-  let value = "";
-  for (let i = 0; i < 2; i++) {
-    switch (arr[i]) {
-      case "black":
-        value += "0";
-        break;
-      case "brown":
-        value += "1";
-        break;
-      case "red":
-        value += "2";
-        break;
-      case "orange":
-        value += "3";
-        break;
-      case "yellow":
-        value += "4";
-        break;
-      case "green":
-        value += "5";
-        break;
-      case "blue":
-        value += "6";
-        break;
-      case "violet":
-        value += "7";
-        break;
-      case "grey":
-        value += "8";
-        break;
-      case "white":
-        value += "9";
-        break;
-    }
-  }
-  return parseInt(value);
-};
+  const resistorArray = [
+    "black",
+    "brown",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "violet",
+    "grey",
+    "white",
+  ];
 
-// const decodedValue = (arr) => {
-//   let value = 0;
-//   for (color of arr) {
-//     switch (color) {
-//       case "black":
-//         value += 0;
-//         break;
-//       case "brown":
-//         value += 1;
-//         break;
-//       case "red":
-//         value += 2;
-//         break;
-//       case "orange":
-//         value += 3;
-//         break;
-//       case "yellow":
-//         value += 4;
-//         break;
-//       case "green":
-//         value += 5;
-//         break;
-//       case "blue":
-//         value +=6;
-//         break;
-//       case "violet":
-//         value +=7;
-//         break;
-//       case "grey":
-//         value += 8;
-//         break;
-//       case "white":
-//         value += 9;
-//         break;
-//     }
-//   }
-//   return value;
-// };
+  let value1 = resistorArray.indexOf(arr[0]);
+  let value2 = resistorArray.indexOf(arr[1]);
+
+  return value1 * 10 + value2;
+};
